@@ -4,12 +4,12 @@ import Grid from "../components/Grid";
 import Header from "../components/Header";
 import Localization from "../components/Localization";
 
-function Home({quantity = 0, goToCart }) {
+function Home({quantity = 0, goToCart, onAddToCart }) {
     return (
         <>
             <Header />
             <Localization />
-            <Grid />
+            <Grid onAddToCart={onAddToCart} />
             <Footer />
             <FleatingActionButton quantity={quantity} onClick={goToCart} />
         </>

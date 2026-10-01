@@ -44,18 +44,21 @@ const pasteis = [
     }
 ];
 
-function Grid() {
+function Grid({ onAddToCart }) {
     return (
         <main className="grid-main">
             <h1>Nossas Opções</h1>
+
             <section className="grid-section">
                 {pasteis.map((pastel) => {
                     return (
                         <Item
+                            key={pastel.name}
                             image={Pastel}
                             name={pastel.name}
                             description={pastel.description}
                             price={pastel.price}
+                            onAddToCart={() => onAddToCart(pastel)}
                         />
                     )
                 })}
